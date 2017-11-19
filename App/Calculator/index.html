@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>System</title>
+</head>
+<body>
+<center>
+<table>
+<tr><input placeholder="0.00" type="number" id="A"/></tr> <tr><input placeholder="0.00" type="number" id="B"/></tr> <tr><p id ="out">Answer: 0</p></tr>
+</table>
+<br>
+<table>
+<tr><button onclick="add()">+</button></tr>
+<tr><button onclick="sub()">-</button></tr>
+<br>
+<tr><button onclick="mult()">*</button></tr>
+<tr><button onclick="div()">/</button></tr>
+</table>
+<br>
+<br>
+<button onclick ="calc()">Calculate</button>
+<button onclick="clr()">Clear</button>
+</table>
+</center>
+<script>
+var C = 0;
+var D = 0;
+var fun = 0;
+var on = 0;
+function add(){
+fun = 1;
+}
+function sub(){
+fun = 2;
+}
+function mult(){
+fun = 3;
+}
+function div(){
+fun = 4;
+}
+function calc(){
+var A =document.getElementById('A').value;
+var B = document.getElementById('B').value;
+
+if (fun == 1)
+{
+C = parseInt(A) + parseInt(B);
+}
+}
+else
+{
+if(fun == 2)
+{
+C = A - B;
+}
+else
+{
+if(fun == 3)
+{
+C = A * B;
+}
+else
+{
+if(fun == 4)
+{
+C = A / B;
+}
+else
+{
+window.alert("Please Select An Opperation");
+} 
+}
+}
+}
+document.getElementById("out").innerHTML ="Answer: " + C;
+}
+function clr(){
+A = 0;
+B = 0;
+C = 0;
+fun = 0;
+document.getElementById('A').value = "";
+document.getElementById('B').value = "";
+
+document.getElementById("out").innerHTML = "Answer: 0";
+window.alert("Calculator Reset");
+}
+</script>
+</body>
+</html>
